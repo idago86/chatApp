@@ -7,8 +7,6 @@
   <title>ChatApp IO </title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
   <style media="screen">
   body{
     margin-top: 30px;
@@ -16,7 +14,9 @@
   #messageArea{
     display: none;
   }
+
   </style>
+
 </head>
 <body>
   <div class="container">
@@ -49,8 +49,11 @@
           </div>
         </div>
       </div>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
       <script>
       $(()=>{
+
         let socket = io.connect();
         let $messageForm = $('#messageForm');
         let $message = $('#message');
@@ -93,6 +96,5 @@
         });
       });
       </script>
-
     </body>
     </html>
