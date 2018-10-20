@@ -13,14 +13,14 @@ app.get('/', (req, res) =>{
 //Start Socket Connection
 io.on('connection', socket =>{
   connectedSockets.push(socket);
-  console.log('Connected => %s sockets now connected', connectedSockets.length);
+  console.log('Connected => %s socket%s now connected', connectedSockets.length, (connectedSockets.length > 1 ? 's' : ''));
 
   //On Socket Disconnection
   socket.on('disconnect', () =>{
     usersList.splice(usersList.indexOf(socket.username), 1);
     connectedSockets.splice(connectedSockets.indexOf(socket), 1);
     updateUsernames();
-    console.log('Disconnected => %s sockets now connected', connectedSockets.length);
+    console.log('Disconnected => %s socket%s now connected', connectedSockets.length, (connectedSockets.length > 1 ? 's' : ''));
   });
 
   //Send back to connectedSockets incomming message

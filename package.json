@@ -9,7 +9,7 @@
   "author": "Israel Dago",
   "license": "ISC",
   "dependencies": {
-    "socket.io":"*",
-    "express":"*"
+    "socket.io": "*",
+    "express": "*"
   }
 }
